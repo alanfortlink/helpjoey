@@ -6,7 +6,7 @@ import pygame
 
 class Floor(Element):
     def __init__(self, points, angles):
-        Element.__init__(self, [Image(None)], 0, 0, 0, 0)
+        Element.__init__(self, [Image(None)], 0, 0, 0, 0, "Floor")
         self.points = points
         self.angles = angles
 
