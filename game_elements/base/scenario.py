@@ -1,10 +1,9 @@
 # game scenario
 
-from element import *
-from image import *
 from game_elements.elements.joey import *
 from game_elements.elements.floor import *
 from game_elements.elements.spring import *
+
 
 class Scenario:
     def __init__(self, image, width, height):
@@ -16,7 +15,7 @@ class Scenario:
 
         self.image.resize(width, height)
 
-    def addElement(self, element):
+    def add_element(self, element):
         self.elements.append(element)
 
     def draw(self, window):
@@ -27,7 +26,7 @@ class Scenario:
             element.draw(window)
 
     def update(self, move_speed, fps):
-        #if there is a scenario update, do it here
+        # if there is a scenario update, do it here
         for element in self.elements:
             element.update()
 
@@ -38,14 +37,13 @@ class Scenario:
                 if len(floors) > 0:
                     floor = floors[0]
                     try:
-                        element.setPosition(element.x,[pos for pos in floor.points if int(pos[0]) == int(element.x)][0][1] - element.height)
+                        element.set_position(element.x,[pos for pos in floor.points if int(pos[0]) == int(element.x)][0][1] - element.height)
                     except:
-                        #end of game
+                        # end of game
                         pass
 
-                elementsColliding = [e for e in [x for x in self.elements if x != element] if element.isColliding(e)]
-                if len(elementsColliding) > 0:
-                    if len([x for x in elementsColliding if isinstance(x, Spring)]) > 0:
-                        element.jump(50, 90)
-
-                # for elColl in elementsColliding:
+                elements_colliding = [e for e in [x for x in self.elements if x != element] if element.is_colliding(e)]
+                if len(elements_colliding) > 0:
+                    for el in elements_colliding:
+                        if isinstance(el, Spring):
+                            element.jump(el.force, el.angle)

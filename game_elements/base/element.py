@@ -6,6 +6,7 @@ from math import sqrt
 from math import sin
 from math import cos
 from math import radians
+from time import time as get_time
 
 
 class Element:
@@ -34,38 +35,39 @@ class Element:
             image.resize(self.width, self.height)
 
     def draw(self, window):
-        self.images[self.spritePosition].draw(window, (self.x-self.px, self.y-self.py, self.width, self.height))
+        self.images[self.spritePosition].draw(window, (self.x+self.px, self.y-self.py, self.width, self.height))
 
     def update(self):
         self.spritePosition = (self.spritePosition + 1) % len(self.images)
         if self.jumping:
-            self.time += 1.0/3.0
+            time = (get_time() - self.time)*10
 
-            self.px = self.vox * self.time
-            self.py = self.voy * self.time + ((-10 * pow(self.time, 2)) / 2)
+            self.px = self.vox * time
+            self.py = self.voy * time + ((-10 * pow(time, 2)) / 2)
 
             # print self.vox, self.time, self.px, self.py
 
-            if self.px < 0 or self.py < 0:
+            if time > 2*(self.voy/10.0):
                 self.jumping = False
+                self.x += + self.px
                 self.time, self.px, self.py = 0, 0, 0
 
     def move(self, move_x, move_y):
         self.x += move_x
         self.y += move_y
 
-    def setPosition(self, x, y):
+    def set_position(self, x, y):
         self.x = x
         self.y = y
 
-    def isColliding(self, e):
+    def is_colliding(self, e):
         dist = sqrt( (pow(e.y - self.y, 2)) + (pow(e.x - self.x, 2)) )
         return (dist <= self.width/2 + e.width/2) or (dist <= self.height/2 + e.height/2)
 
     def jump(self, force, angle):
         if not self.jumping:
             self.jumping = True
-            self.time = 0
+            self.time = get_time()
             self.vox = force * cos(radians(angle))
             self.voy = force * sin(radians(angle))
 
