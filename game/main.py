@@ -1,3 +1,33 @@
+from opencv.provider import *
+from opencv.recognizer import *
+
+# tracking step
+
+provider = Provider()
+recog = Recognizer()
+
+game_frame = None
+last = (0, 0)
+
+while True:
+    ret, frame = provider.get_image()
+
+    cv2.imshow("Tracking", frame)
+    last = recog.track(game_frame, frame, last)
+
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+provider.close()
+
+
+# recognizing step
+
+recog.get_objects(game_frame)
+
+# playing step
+
+
 from game_elements.base.scenario import *
 from game_elements.elements.door import *
 from game_elements.elements.joey import *
@@ -11,9 +41,9 @@ move_speed = 100
 
 scenario = Scenario("../game_elements/resources/images/scenario1.jpg", *window_size)
 scenario.add_element(Door(0, 350))
-scenario.add_element(Spring(100, 350, 50, 70))
-scenario.add_element(Spring(400, 350, 50, 135))
-scenario.add_element(Spring(900, 350, 90, 90))
+
+
+
 floor = Floor([(i, 400) for i in range(window_size[0])], [])
 scenario.add_element(floor)
 joey = Joey(0, 400)
