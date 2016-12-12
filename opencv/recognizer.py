@@ -36,7 +36,12 @@ class Recognizer:
 
         # print screenCnt
         # cv2.drawContours(frame, [screenCnt], -1, (0, 255, 0), 3)
-        
-        # cv2.imshow("Bound", frame)
+        (H, mask) = cv2.findHomography(screenCnt.astype('single'),
+                                       np.array([[[0., 0.]], [[800., 0.]], [[800., 600.]], [[0., 600.]]],
+                                                dtype=np.single))
+        final_image = cv2.warpPerspective(frame, H, (800, 600))
+        # cv2.imshow("Bound", final_image)
         # cv2.waitKey(0)
-        return screenCnt
+        # return screenCnt
+
+        return final_image
