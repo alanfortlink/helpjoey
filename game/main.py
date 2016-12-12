@@ -12,11 +12,15 @@ last = (0, 0)
 while True:
     ret, frame = provider.get_image()
 
+    try:
+        frame = recog.findBounds(frame)
+    except:
+        pass
+
     cv2.imshow("Tracking", frame)
     last = recog.track(game_frame, frame, last)
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
-        recog.findBounds(frame)
         break
 
 provider.close()
