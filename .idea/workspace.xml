@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f604a36-c9f8-4758-9315-f8ef9e7dbd01" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/helpjoey.iml" afterPath="$PROJECT_DIR$/.idea/helpjoey.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/game/main.py" afterPath="$PROJECT_DIR$/game/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/opencv/provider.py" afterPath="$PROJECT_DIR$/opencv/provider.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/opencv/recognizer.py" afterPath="$PROJECT_DIR$/opencv/recognizer.py" />
     </list>
     <ignored path="helpjoey.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -19,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/helpjoey$main.coverage" NAME="main Coverage Results" MODIFIED="1481551677228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/game" />
+    <SUITE FILE_PATH="coverage/helpjoey$main.coverage" NAME="main Coverage Results" MODIFIED="1481552228848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/game" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -45,8 +40,8 @@
       <file leaf-file-name="recognizer.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/opencv/recognizer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="41" column="24" lean-forward="false" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
+            <state relative-caret-position="346">
+              <caret line="40" column="24" lean-forward="true" selection-start-line="37" selection-start-column="8" selection-end-line="40" selection-end-column="24" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -1103,8 +1098,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/opencv/recognizer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="41" column="24" lean-forward="false" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
+        <state relative-caret-position="346">
+          <caret line="40" column="24" lean-forward="true" selection-start-line="37" selection-start-column="8" selection-end-line="40" selection-end-column="24" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>
