@@ -4,7 +4,8 @@ import cv2
 
 class Provider:
     def __init__(self):
-        self.cap = cv2.VideoCapture(0)
+        self.cap = cv2.VideoCapture("http://10.42.0.185:8080/video?dummy=param.mjpg")
+        # self.cap = cv2.VideoCapture(0)
 
     def get_scenario(self):
         pass

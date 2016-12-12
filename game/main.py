@@ -16,6 +16,7 @@ while True:
     last = recog.track(game_frame, frame, last)
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
+        recog.findBounds(frame)
         break
 
 provider.close()
